@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <a href="#Disconnection"><i class="fas fa-power-off"></i></a>
+        <a href="Controller?action=disconnect"><i class="fas fa-power-off"></i></a>
     </header>
     <div class="warpper">
         <h2>List of Employee</h2>

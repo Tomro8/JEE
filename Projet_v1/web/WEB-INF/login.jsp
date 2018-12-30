@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <a href="#Disconnection"><i class="fas fa-power-off"></i></a>
+        
     </header>
     <p class="error_message"><c:out value="${requestScope.err}" /></p>
     <form class="login_form" method="post" action="Controller?action=login">

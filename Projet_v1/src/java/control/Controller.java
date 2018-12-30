@@ -7,7 +7,6 @@ package control;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jee.model.DB;
 import jee.model.Employee;
-import jee.model.User;
 
 /**
  *
@@ -23,11 +21,9 @@ import jee.model.User;
  */
 public class Controller extends HttpServlet {
 
-    ArrayList<Employee> listEmployees;
-    ArrayList<User> listUsers;
-    String queryEmployees;
-    String queryUser;
-
+    private HttpSession session;
+    private String action;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,14 +36,10 @@ public class Controller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
   
-        DB.connect();
+        //Identify the request
+        action = request.getParameter("action");
         
-        HttpSession session = request.getSession();
-        
-        //Identify the form
-        String action = request.getParameter("action");
-        
-        //First request
+        //First request at welcome
         if (action == null) {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         } 
@@ -56,6 +48,9 @@ public class Controller extends HttpServlet {
         
         //Login
         else if (action.equals("login")) {
+            DB.connect();
+            session = request.getSession();
+            
             //Get user input
             String loginEntered = request.getParameter("login");
             String pwdEntered = request.getParameter("password");
@@ -182,7 +177,7 @@ public class Controller extends HttpServlet {
             String zipCode = request.getParameter("zipCode");
             String city = request.getParameter("city");
             String email = request.getParameter("email");
-            String id = request.getParameter("id");           
+            String id = request.getParameter("id");  
             
             try {
                 DB.updateEmployee(lastName, firstName, homePhone, mobilePhone, 
@@ -195,17 +190,21 @@ public class Controller extends HttpServlet {
                 ex.printStackTrace();
             }
         }
+        
+        /***********************************************************/
+        
+        else if (action.equals("disconnect")) {
+            session.invalidate();
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+        }
+        
+        else {
+            //todo: error
+        }
     }
-    
-    /*
-    public void goToEmpListPage(HttpServletRequest request, HttpSession session, HttpServletResponse response) throws ServletException, IOException {
-        //Update employeeList attribute in session
-        session.setAttribute("employeesList", DB.getListEmployee());
-        request.getRequestDispatcher("employeeList.jsp").forward(request, response);
-    }
-    */
 
-    /***********************************************************/
+    
+    
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
