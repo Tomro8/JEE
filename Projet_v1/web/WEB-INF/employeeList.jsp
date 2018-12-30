@@ -26,7 +26,8 @@
             
             <c:choose>
                 <c:when test="${empty employeesList}">
-                    <b class="noMember">The club has no member!</b>
+                    <b>The club has no member!</b>
+                    <br />
                 </c:when>
                 <c:otherwise>
                     <table>
