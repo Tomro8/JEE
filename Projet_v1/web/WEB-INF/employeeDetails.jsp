@@ -1,9 +1,3 @@
-<%-- 
-    Document   : welcome
-    Created on : 26 oct. 2018, 15:41:04
-    Author     : Jacques
---%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE HTML>
 <html>
 

@@ -1,11 +1,3 @@
-<%-- 
-    Document   : employeeDetails
-    Created on : 14 déc. 2018, 08:30:05
-    Author     : thomas
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE HTML>
 <html>
 
