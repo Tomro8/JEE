@@ -49,7 +49,6 @@ public class Controller extends HttpServlet {
         //Login
         else if (action.equals("login")) {
             DB.connect();
-            session = request.getSession();
             
             //Get user input
             String loginEntered = request.getParameter("login");
@@ -66,6 +65,10 @@ public class Controller extends HttpServlet {
                 try {
                     //Correct credentials: redirect to employeeList.jsp
                     if (DB.login(loginEntered, pwdEntered)) {
+                        //Start session for this user
+                        session = request.getSession();
+                        session.setAttribute("user", loginEntered);
+                        
                         //the object EmployeeList is set in session scope because it is required many times
                         session.setAttribute("employeesList", DB.getListEmployee());
                         request.getRequestDispatcher("WEB-INF/employeeList.jsp").forward(request, response);
