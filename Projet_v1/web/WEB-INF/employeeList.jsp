@@ -12,7 +12,7 @@
     <header>
         <a href="Controller?action=disconnect"><i class="fas fa-power-off"></i></a>
         <c:if test="${!empty sessionScope.user}">
-            <span>Your Session is active</span>
+            <span>Your session is active</span>
         </c:if>
     </header>
     <div class="warpper">
