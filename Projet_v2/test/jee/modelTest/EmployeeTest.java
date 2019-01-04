@@ -40,6 +40,7 @@ public class EmployeeTest {
         email = "email@email.net";
         id = 0;
         e = new Employee(name, firstName, telHome, telMob, telPro, address, PC, city, email, id);
+        em = new Employee(name, firstName, telHome, telMob, telPro, address, PC, city, email, id);
         
     }
     
@@ -49,7 +50,6 @@ public class EmployeeTest {
     
     @Before
     public void setUp() {
-        em = e;
     }
     
     @After
@@ -67,7 +67,7 @@ public class EmployeeTest {
     public final void testSetId(){
         int idM = 1;
         em.setId(idM);
-        assertTrue(e.getId() == idM);
+        assertTrue(em.getId() == idM);
         
     }
     
@@ -80,14 +80,12 @@ public class EmployeeTest {
     public final void testSetName(){
         String string = "Test";
         em.setName(string);
-        assertTrue(e.getName().equals(string));
+        assertTrue(em.getName().equals(string));
 
     }
     
     @Test
     public final void testGetFirstName(){
-        System.out.println(e.getFirstName());
-        System.out.println(firstName);
         assertTrue(e.getFirstName().equals(firstName));
     }
     
@@ -95,7 +93,7 @@ public class EmployeeTest {
     public final void testSetFirstName(){
         String string = "Test";
         em.setFirstName(string);
-        assertTrue(e.getFirstName().equals(string));
+        assertTrue(em.getFirstName().equals(string));
     }
     
     @Test
@@ -107,7 +105,7 @@ public class EmployeeTest {
     public final void testSetTelephone(){
         String string = "Test";
         em.setTelephone(string);
-        assertTrue(e.getTelephone().equals(string));
+        assertTrue(em.getTelephone().equals(string));
     }
     
     @Test
@@ -119,7 +117,7 @@ public class EmployeeTest {
     public final void testSetTelMob(){
         String string = "Test";
         em.setTelMob(string);
-        assertTrue(e.getTelMob().equals(string));
+        assertTrue(em.getTelMob().equals(string));
     }
     
     @Test
@@ -131,7 +129,7 @@ public class EmployeeTest {
     public final void testSetTelPro(){
         String string = "Test";
         em.setTelPro(string);
-        assertTrue(e.getTelPro().equals(string));
+        assertTrue(em.getTelPro().equals(string));
     }
     
     @Test
@@ -143,7 +141,7 @@ public class EmployeeTest {
     public final void testSetAddress(){
         String string = "Test";
         em.setAddress(string);
-        assertTrue(e.getAddress().equals(string));
+        assertTrue(em.getAddress().equals(string));
     }
     
     @Test
@@ -155,7 +153,7 @@ public class EmployeeTest {
     public final void testSetPostalCode(){
         String string = "Test";
         em.setPostalCode(string);
-        assertTrue(e.getPostalCode().equals(string));
+        assertTrue(em.getPostalCode().equals(string));
     }
     
     @Test
@@ -167,7 +165,7 @@ public class EmployeeTest {
     public final void testSetCity(){
         String string = "Test";
         em.setCity(string);
-        assertTrue(e.getCity().equals(string));
+        assertTrue(em.getCity().equals(string));
     }
     
     @Test
@@ -179,6 +177,6 @@ public class EmployeeTest {
     public final void testSetEmail(){
         String string = "Test";
         em.setEmail(string);
-        assertTrue(e.getEmail().equals(string));
+        assertTrue(em.getEmail().equals(string));
     }
 }
