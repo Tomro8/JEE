@@ -1,0 +1,177 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 déc. 2018, 09:24:52
+    Author     : thomas
+*/
+
+html,
+body, header {
+    width: 100%;
+    font-family: 'Arial';
+    color: #333;
+}
+
+header a {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #FFF;
+    background: #518BC5;
+    padding: 5px 10px;
+    border: 1px solid #47B;
+    border-radius: 5px;
+}
+
+.error_message {
+    color: #C55;
+    margin: 300px auto 0px auto;
+    width: 20%;
+
+}
+
+.login_form {
+    width: 20%;
+    border: #AAA solid 1px;
+    border-radius: 5px;
+    margin: 5px auto;
+
+}
+
+.login_form h2 {
+    background-color: #EEE;
+    height: 40px;
+    margin: -20px 0px 5px 0px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.login_form h2 p {
+    padding: 10px 0px 10px 10px;
+    color: #333;
+}
+
+b {
+    color: blue;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    border-radius: 5px;
+    height: 25px;
+    margin: 7px;
+    width: 70%;
+    font-size: 15px;
+    border: 1px solid #AAA;
+}
+
+input[type="submit"],
+input[type="button"] {
+    width: auto;
+    background-color: #518bc5;
+    color: #FFF;
+    margin: 7px;
+    font-size: 15px;
+    height: 30px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+input[type="button"] {
+    margin: 15px auto;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #417bb5;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+
+table {
+    width: 100%;
+    margin: 0px auto;
+    border: none;
+    border-collapse: collapse;
+}
+
+tr {
+    height: 30px;
+    border: #555 solid 2px 0px;
+}
+
+tr:first-child td:not(:first-child) {
+    text-transform: uppercase;
+}
+
+tr:first-child td {
+    font-weight: bold;
+}
+
+tr:nth-child(2n) {
+    background: #EEE;
+}
+
+tr:nth-child(2n-1) {
+    background: #FFF;
+}
+
+.warpper {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.content {
+    width: 100%;
+    float: left;
+}
+
+.content input[type="text"] {
+    width: 28.3%;
+
+}
+
+.content a {
+    width: auto;
+    background-color: #FFF;
+    margin: 7px;
+    font-size: 15px;
+    height: 30px;
+    transition: 0.3s;
+    border: #EEE solid 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+#main{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.fof{
+	  display: table-cell;
+	  vertical-align: middle;
+}
+
+.fof h1{
+	  font-size: 50px;
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+}
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #888;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}
