@@ -58,6 +58,14 @@ b {
     color: blue;
 }
 
+span{
+    color: blue;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="password"] {
