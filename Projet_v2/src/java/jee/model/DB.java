@@ -54,11 +54,9 @@ public class DB {
 
     public static boolean login(String login, String password) throws SQLException {
 
-        System.out.println(login + " " + password);
     	PreparedStatement loginS = connexion.prepareStatement(SQLRequest.loginExist); 
     	loginS.setString(1, login);
     	ResultSet result = loginS.executeQuery();
-    	
     
         if(result.next()) {
                     System.out.println("exist");

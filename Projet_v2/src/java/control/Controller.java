@@ -49,7 +49,6 @@ public class Controller extends HttpServlet {
         //Login
         else if (action.equals("login")) {
             DB.connect();
-            session = request.getSession();
             
             //Get user input
             String loginEntered = request.getParameter("login");
@@ -66,6 +65,10 @@ public class Controller extends HttpServlet {
                 try {
                     //Correct credentials: redirect to employeeList.jsp
                     if (DB.login(loginEntered, pwdEntered)) {
+                        //Start session for this user
+                        session = request.getSession();
+                        session.setAttribute("user", loginEntered);
+                        
                         //the object EmployeeList is set in session scope because it is required many times
                         session.setAttribute("employeesList", DB.getListEmployee());
                         request.getRequestDispatcher("WEB-INF/employeeList.jsp").forward(request, response);
@@ -76,8 +79,8 @@ public class Controller extends HttpServlet {
                         request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
                     }
                 } catch (SQLException ex) {
-                    //Todo: handling ex
                     ex.printStackTrace();
+                    request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
                 }
             }
         }
@@ -106,8 +109,8 @@ public class Controller extends HttpServlet {
                 session.setAttribute("employeesList", DB.getListEmployee());
                 request.getRequestDispatcher("WEB-INF/employeeList.jsp").forward(request, response);
             } catch (SQLException ex) {
-                //todo
                 ex.printStackTrace();
+                request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
             }
         }
         
@@ -127,8 +130,8 @@ public class Controller extends HttpServlet {
                     request.setAttribute("employee", emp);
                     request.getRequestDispatcher("WEB-INF/employeeDetails.jsp").forward(request, response);
                 } catch (SQLException ex) {
-                    //Todo: handle ex
                     ex.printStackTrace();
+                    request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
                 }
             }
         }
@@ -161,8 +164,8 @@ public class Controller extends HttpServlet {
                 session.setAttribute("employeesList", DB.getListEmployee());
                 request.getRequestDispatcher("WEB-INF/employeeList.jsp").forward(request, response);
             } catch (SQLException ex) {
-                //Todo
                 ex.printStackTrace();
+                request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
             }
         }
         
@@ -186,8 +189,8 @@ public class Controller extends HttpServlet {
                 session.setAttribute("employeesList", DB.getListEmployee());
                 request.getRequestDispatcher("WEB-INF/employeeList.jsp").forward(request, response);
             } catch (SQLException ex) {
-                //Todo
                 ex.printStackTrace();
+                request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
             }
         }
         
@@ -199,7 +202,7 @@ public class Controller extends HttpServlet {
         }
         
         else {
-            //todo: error
+            request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
         }
     }
 
