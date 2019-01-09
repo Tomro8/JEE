@@ -11,7 +11,7 @@ Please follow those steps to run our application:
 
 
 
-In **Netbeans**: Clone Project from **GitHub Repository** https://github.com/Tomro8/JEE_v1
+In **Netbeans**: Clone Project from **GitHub Repository** https://github.com/Tomro8/JEE
 
 - You have to specify the path for a dependency with file `mysql-connector-java-5.1.23-bin.jar` that is located in the root folder of this repository (`\Repo_Projet_V1\mysql-connector-java-5.1.23-bin.jar`):
   - to do so either right click on project and find "resolve dependancy problems" and indicate the path to that file
