@@ -39,7 +39,7 @@ We are still using **MySql**
 This is a **Maven** project. Since we use JPA, all information related to the database can be find in the file `JEE-master\src\main\resource\META-INF\persistance.xml` therefore we removed the **db.properties** file.
 
 We did not manage to put the project on AWS or on any cloud platform.
-In the pipeline, we have been as far as **Jenkins**. You can find a file explaining how we configured Jenkins: `rootRepo\Jenkins.pdf`
+In the pipeline, we have been as far as **Jenkins**. You can find a file explaining how we configured Jenkins: `JEE-master\Jenkins.pdf`
 
 You may have to do some trouble shooting if you want to run the project on Eclipse regarding the properties of the project: the java build path and project facets.
 Java 1.7 is required
